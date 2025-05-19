@@ -1,15 +1,30 @@
 #  movieApp‑wTV
 
-## Proje Hakkında
-**movieApp‑wTV**, TMDB (The Movie Database) API’sini kullanarak film ve dizi bilgilerini modern, responsive bir arayüzde sunan bir web uygulamasıdır. Kullanıcılar popüler yapımları inceleyebilir, arama yapabilir ve detay sayfasında IMDb puanı, özet, türler ve oyuncu kadrosu gibi bilgilere erişebilir. ( güncelleme gelecek
+-  📌 Proje Hakkında
+Bu proje, kullanıcıların filmleri keşfedebileceği, arama yapabileceği ve film detaylarını görüntüleyebileceği modern bir web uygulamasıdır. Uygulama responsive tasarım ile geliştirilmiştir ve tüm cihazlarda sorunsuz çalışmaktadır.
 
-## 🛠 Kullanılan Teknolojiler
-- **HTML5 & CSS3** – Temel iskelet ve stil
-- **JavaScript (ES6)** – Dinamik içerik ve API entegrasyonu
-- **Fetch API** – TMDB REST isteği
-- **Font Awesome** – İkonlar
+✨ Özellikler
+✅ Filmleri grid görünümünde listeleme
 
-##  Özellikler
--  **Arama**: Film/dizi adına göre anlık arama
--  **IMDb Puan Görselleştirmesi**: Renk kodlu puan rozeti
+✅ Arama fonksiyonelliği
+
+✅ IMDB puanlarına göre renkli rating göstergeleri
+
+✅ Responsive tasarım
+
+✅ Modern kullanıcı arayüzü
+
+✅ Hover animasyonları
+
+🚀 Gelecek Güncellemeler
+
+🔜 Film detay sayfaları
+
+🔜 Kullanıcı yorumları bölümü
+
+🔜 Favorilere ekleme özelliği
+
+🔜 Kategori filtreleme
+
+🔜 Karanlık/aydınlık tema seçeneği
 
