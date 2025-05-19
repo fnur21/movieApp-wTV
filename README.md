@@ -1,6 +1,7 @@
 #  movieApp‑wTV
 
--  📌 Proje Hakkında
+
+📌 Proje Hakkında
 Bu proje, kullanıcıların filmleri keşfedebileceği, arama yapabileceği ve film detaylarını görüntüleyebileceği modern bir web uygulamasıdır. Uygulama responsive tasarım ile geliştirilmiştir ve tüm cihazlarda sorunsuz çalışmaktadır.
 
 ✨ Özellikler
