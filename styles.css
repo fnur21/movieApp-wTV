@@ -1,95 +1,188 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0px;
-    padding: 0px;
+
+:root {
+  --primary-color: #1a2a4f;
+  --secondary-color: #2c3e6b;
+  --accent-color: #4a6fa5;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --success-color: #4caf50;
+  --warning-color: #ffc107;
+  --danger-color: #f44336;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
-.header{
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a4f, #4a6fa5);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-light);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.header {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  
-}
-
-
-body{
-    background-color: rgb(158, 184, 215);
-    font-family: "poppins";
-}
-#searchInput{
-    padding: 5px;
-    border-radius: 40px;
-    background-color: transparent;
-    outline: none;
-    margin-top: 15x;
-    margin-right: 15px;
-    color:#fff;
-
-}
-
-searchInput::placeholder{
-    color:#fff;
-    font-size: 12px;
-    text-align: center;
-
-}
-
-.movies{
-display: flex;
-flex-direction:row;
-flex-wrap: wrap;
-margin-top: 40px;
-border-radius: 30px;
-
-}
-.movie{
-    margin: 10px;
-    width: 250px;
-    height: 435px;
-    background-color:  rgb(85, 121, 156);
-    border-radius: 30px;
-}
-
-.moviePicture{
-    border-radius: 30px;
-    width: 250px;
-    height: 300px;
-}
-
-.info{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+    color: var(--text-light);
+    font-size: 16px;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+#searchInput:focus {
+    border-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.3);
+}
+
+#searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.movie {
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.moviePicture {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.movie:hover .moviePicture {
+    opacity: 0.8;
+}
+
+.movie-info {
+    padding: 1.2rem;
+}
+
+.movieName {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-  
-
 }
 
-.movieName{
-font-size: 13px;
-color: rgb(33, 20, 175);
-margin-top: 10px;
-
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
-.imdbPoint{
-    font-size: 15px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 231, 125);
-    margin-left: 8px;
+
+.imdbPoint {
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
     border-radius: 4px;
 }
 
-
-.green{
-    background-color: rgb(92, 195, 29);
-    color: #fff;
-}
-.yellow{
-    background-color: rgb(245, 247, 102);
-    color: black;
-}
-.red{
-    background-color: rgb(228, 13, 13);
-    color: #fff;
+.green {
+    background-color: var(--success-color);
+    color: white;
 }
 
+.yellow {
+    background-color: var(--warning-color);
+    color: var(--text-dark);
+}
+
+.red {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.movie-year {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    .movies {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .moviePicture {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .movies {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ekstra efektler */
+.movie::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.movie:hover::after {
+    opacity: 1;
+}
